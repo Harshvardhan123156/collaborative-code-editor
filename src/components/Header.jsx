@@ -17,7 +17,7 @@ function Header({
         </span>
 
         <span className="brand-name">
-          CodeCollab
+          CollabAndCode
         </span>
       </div>
 
