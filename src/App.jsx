@@ -78,7 +78,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "https://collaborative-code-editor-hgir.onrender.com",
+        "https://collaborative-code-editor-hgir.onrender.com/execute",
         {
           method: "POST",
           headers: {
