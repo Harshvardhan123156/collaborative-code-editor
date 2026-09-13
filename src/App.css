@@ -1,0 +1,490 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: #0f1115;
+  color: #d7dae0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f1115;
+}
+
+.app.light {
+  background: #f5f5f5;
+  color: #222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 52px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 14px;
+
+  background: #17191e;
+  border-bottom: 1px solid #292c33;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-weight: 600;
+}
+
+.brand-mark {
+  color: #6cb6ff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.brand-name {
+  color: #e8eaed;
+  letter-spacing: -0.2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header select {
+  height: 32px;
+
+  background: #20232a;
+  color: #dfe2e7;
+
+  border: 1px solid #343840;
+  border-radius: 5px;
+
+  padding: 0 10px;
+
+  outline: none;
+  cursor: pointer;
+}
+
+.header button {
+  height: 32px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  border: 1px solid #343840;
+}
+
+.theme-btn {
+  width: 34px;
+
+  background: #20232a;
+  color: #cfd3da;
+}
+
+.run-btn {
+  padding: 0 14px;
+
+  background: #238636;
+  color: white;
+
+  border-color: #2ea043 !important;
+
+  font-weight: 500;
+}
+
+.run-btn:hover {
+  background: #2ea043;
+}
+
+.run-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 230px;
+  flex-shrink: 0;
+
+  background: #14161b;
+  border-right: 1px solid #292c33;
+
+  padding: 16px 12px;
+}
+
+.sidebar-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #858b96;
+
+  letter-spacing: 0.7px;
+}
+
+.section-title span {
+  color: #6d737e;
+}
+
+.room-input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.room-input-row input {
+  min-width: 0;
+  flex: 1;
+
+  height: 32px;
+
+  padding: 0 9px;
+
+  background: #1d2026;
+  color: #dfe2e7;
+
+  border: 1px solid #333740;
+  border-radius: 5px;
+
+  outline: none;
+}
+
+.room-input-row input:focus {
+  border-color: #5b8def;
+}
+
+.room-input-row input:disabled {
+  opacity: 0.65;
+}
+
+.join-btn,
+.leave-btn {
+  height: 32px;
+
+  padding: 0 10px;
+
+  border-radius: 5px;
+
+  border: 1px solid #343840;
+
+  cursor: pointer;
+}
+
+.join-btn {
+  background: #202832;
+  color: #8fc5ff;
+}
+
+.leave-btn {
+  background: #2a1c1e;
+  color: #f4878c;
+}
+
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 10px;
+
+  font-size: 12px;
+  color: #858b96;
+}
+
+.status-dot,
+.user-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  display: inline-block;
+}
+
+.status-dot.online {
+  background: #3fb950;
+}
+
+.status-dot.offline {
+  background: #f85149;
+}
+
+.user-dot {
+  background: #58a6ff;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 7px 6px;
+
+  font-size: 13px;
+
+  border-radius: 4px;
+}
+
+.user-item:hover {
+  background: #1d2026;
+}
+
+.you {
+  margin-left: auto;
+
+  font-size: 10px;
+  color: #777f8c;
+}
+
+.empty-sidebar {
+  color: #626874;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  padding: 8px 3px;
+}
+
+
+
+.editor-area {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #1e1e1e;
+}
+
+.editor-tab {
+  height: 36px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 0 13px;
+
+  background: #181a1f;
+  border-bottom: 1px solid #292c33;
+
+  font-size: 12px;
+  color: #aeb4be;
+}
+
+.file-icon {
+  color: #6cb6ff;
+  font-size: 9px;
+}
+
+.read-only-label {
+  margin-left: auto;
+
+  font-size: 11px;
+  color: #6d737e;
+}
+
+.monaco-wrapper {
+  flex: 1;
+  min-height: 0;
+}
+
+
+
+.console {
+  height: 170px;
+  flex-shrink: 0;
+
+  background: #111318;
+  border-top: 1px solid #292c33;
+}
+
+.console-header {
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 13px;
+
+  border-bottom: 1px solid #292c33;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #aeb4be;
+}
+
+.console-header button {
+  background: transparent;
+  border: none;
+
+  color: #777f8c;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.console-header button:hover {
+  color: #c5cad3;
+}
+
+.console-output {
+  margin: 0;
+
+  height: calc(100% - 34px);
+
+  padding: 10px 13px;
+
+  overflow: auto;
+
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+
+  color: #c9d1d9;
+
+  white-space: pre-wrap;
+}
+
+
+.app.light .header {
+  background: #ffffff;
+  border-color: #ddd;
+}
+
+.app.light .brand-name {
+  color: #222;
+}
+
+.app.light .sidebar {
+  background: #f0f1f3;
+  border-color: #ddd;
+}
+
+.app.light .room-input-row input,
+.app.light .header select,
+.app.light .theme-btn {
+  background: #ffffff;
+  color: #333;
+  border-color: #ccc;
+}
+
+.app.light .editor-area {
+  background: #ffffff;
+}
+
+.app.light .editor-tab {
+  background: #f5f5f5;
+  border-color: #ddd;
+}
+
+.app.light .console {
+  background: #f8f8f8;
+  border-color: #ddd;
+}
+
+.app.light .console-output {
+  color: #333;
+}
+
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    width: 190px;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .header {
+    padding: 0 8px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .header select {
+    max-width: 110px;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  .header select {
+    max-width: 100px;
+  }
+
+  .console {
+    height: 140px;
+  }
+}
