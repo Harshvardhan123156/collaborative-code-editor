@@ -195,12 +195,8 @@ app.post("/execute", async (req, res) => {
         });
 
     } catch (error) {
-
-        console.log(error.message);
-
-        res.status(500).json({
-            output: "Code execution failed.",
-        });
+        console.log("EXECUTION ERROR:", error.response?.data || error.message);
+        res.status(500).json({ output: "Code execution failed." });
     }
 });
 
